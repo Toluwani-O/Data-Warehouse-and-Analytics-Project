@@ -56,77 +56,109 @@ The architecture follows a Medallion Architecture approach, separating data into
 
 This layered approach improves data organization, traceability, consistency, and analytical reliability.
 
-### 🔄 Project Workflow and Implementation
-1. Data Extraction and Source Integration
+### 🔄 Project Workflow and Implementation  - ETL Pipeline Implementation
 
-The first stage involves collecting data from different sources and preparing it for centralized processing.
+The project implements an end-to-end ETL pipeline designed to extract, transform, validate, and load data into a structured data warehouse. The pipeline follows a **Full Extraction, Transformation, and Loading (Full Load / SCD Type 1)** strategy to ensure data consistency and analytical reliability.
 
-Key activities:
+#### 1. Extraction
 
-1. Extracting structured datasets from CSV files.
+**Strategy: Full Extraction | Method: Pull | Technique: File Parsing**
 
-- Reviewing source schemas, column names, data types, and relationships.
+- Retrieve complete datasets from source files using Python.
+- Parse CSV and Excel files using Pandas.
+- Extract and inspect source schemas, columns, and data types.
+- Load raw data into the Bronze layer while preserving source information.
 
-- Identifying data dependencies and potential integration challenges.
+#### 2. Transformation
 
-- Documenting source information and extraction requirements.
+**Approach: Data Cleaning, Integration, Enrichment, and Aggregation**
 
-Skills demonstrated: Data acquisition, source integration, SQL, file handling, and data profiling.
+- **Data Cleaning:** Handle missing values, duplicates, inconsistent formats, and invalid records.
+- **Data Integration:** Combine datasets using common keys and relationships.
+- **Data Enrichment:** Enhance existing records with additional attributes and business context.
+- **Data Aggregation:** Summarize transactional data and calculate business metrics.
+- **Derived Columns:** Generate calculated fields and business attributes.
+- **Derived Column Cleaning:** Validate and standardize newly created fields before loading.
 
-2. Data Cleaning and Preparation
+Cleaned and transformed datasets are stored in the Silver layer, ready for dimensional modeling.
 
-- Raw datasets often contain inconsistencies that can affect analytical accuracy. I apply data preparation techniques to improve data quality before loading information into the warehouse.
+#### 3. Loading
 
-Key activities:
+**Loading Strategies: Full Load (Truncate & Insert) and SCD Type 1 (Overwrite)**
 
-Identifying and handling missing values, removing duplicate records where appropriate, standardizing date formats and categorical variables, correcting inconsistent naming conventions, validating numerical fields and data types, identifying invalid records and outliers, resolving inconsistencies across multiple datasets, documenting data cleaning rules and assumptions.
+- **Full Load:** Truncate existing target records and insert the complete transformed dataset to refresh the target tables.
+- **SCD Type 1:** Identify new and changed dimension records using business keys, insert new records, and overwrite changed attributes without maintaining historical versions.
 
-Skills demonstrated: Data wrangling, data profiling, data validation, SQL, and data quality management.
+Validated fact and dimension tables are loaded into the Gold layer for analytical querying and reporting.
 
-3. Data Transformation and ETL/ELT Development
+#### 4. ETL Workflow
 
-This stage focuses on converting raw datasets into structured information suitable for analytical use.
+```text
+SOURCE FILES (CSV / EXCEL)
+          |
+          ▼
+     EXTRACTION
+   Full Pull Method
+     File Parsing
+          |
+          ▼
+     BRONZE LAYER
+       Raw Data
+          |
+          ▼
+    TRANSFORMATION
+   ├── Data Cleaning
+   ├── Data Integration
+   ├── Data Enrichment
+   ├── Data Aggregation
+   ├── Derived Columns
+   └── Derived Column Cleaning
+          |
+          ▼
+     SILVER LAYER
+  Cleaned & Transformed Data
+          |
+          ▼
+        LOADING
+   ├── Full Load
+   │   (Truncate & Insert)
+   │
+   └── SCD Type 1
+       (Overwrite)
+          |
+          ▼
+      GOLD LAYER
+   Fact & Dimension Tables
+          |
+          ▼
+    SQL ANALYTICS
+          |
+          ▼
+   POWER BI DASHBOARD
+```
 
-Depending on the source and destination systems, transformation logic is applied before loading (ETL) or within the target warehouse (ELT).
+#### 5. Data Quality & Validation
 
-Key activities:
+Data quality checks are incorporated throughout the pipeline to ensure reliable warehouse outputs.
 
-Selecting relevant fields and records, standardizing data structures, applying business rules and transformation logic, combining datasets using joins and key relationships.
-Creating calculated columns and derived metrics, aggregating transactional data into meaningful summaries, preparing datasets for dimensional modeling, maintaining consistency across transformation stages.
+- Null and duplicate record detection.
+- Data type and format validation.
+- Primary and foreign key integrity checks.
+- Source-to-target record count reconciliation.
+- Business rule and derived column validation.
+- Post-load verification of target tables.
+- SCD Type 1 update validation.
 
-Skills demonstrated: ETL/ELT processes, SQL transformations, Python scripting, data integration, and analytical data preparation.
+**Outcome:** A structured and repeatable ETL pipeline that transforms raw source data into validated, business-ready warehouse tables, supporting reliable SQL analytics and Power BI reporting.
 
-4. Data Warehouse Architecture and Design
 
-The warehouse is designed to provide a centralized environment for storing structured, analysis-ready data.
-
-The implementation considers the separation of raw data, transformed datasets, and reporting-ready information.
-
-Key activities:
-
-Designing a logical and physical warehouse structure, creating staging tables for incoming datasets, defining schemas and database relationships, establishing primary and foreign keys, applying appropriate data types and constraints, organizing data to support efficient analytical queries, considering data integrity, scalability, and maintainability.
-
-Skills demonstrated: Data warehouse architecture, relational database design, schema design, SQL, and database management.
-
-5. Data Modeling
+#### 6. Data Modeling
 
 To make analytical reporting more efficient, the project incorporates dimensional modeling principles.
 
 The warehouse uses fact and dimension tables to organize business information around measurable activities and descriptive attributes.
 
-6. Data Quality Assurance and Validation
-
-Data quality is essential for producing reliable reports and business insights.
-
-I incorporate validation procedures to identify potential issues throughout the data pipeline.
-
-Quality checks include: Duplicate record detection, Null value checks, Data type validation, Primary key uniqueness checks, Foreign key integrity checks, Referential integrity validation, Record count reconciliation between pipeline stages, Range and business rule validation, source-to-target data comparison.
-
-These checks help establish confidence in the data before it is used for reporting and decision-making.
-
-Skills demonstrated: Data quality assurance, data auditing, reconciliation, validation logic, and problem-solving.
-
-7. SQL Analytics and Business Intelligence
+#### 7. SQL Analytics and Business Intelligence
 
 Once the data warehouse is populated and validated, SQL is used to investigate business performance and extract relevant information.
 
@@ -137,7 +169,7 @@ The objective is to move beyond simply retrieving records and use SQL to answer 
 
 Skills demonstrated: Advanced SQL, analytical querying, business metrics, trend analysis, and critical thinking.
 
-8. Power BI Dashboard Development
+#### 8. Power BI Dashboard Development
 
 Power BI serves as the business intelligence layer, translating structured warehouse data into interactive reports and dashboards.
 
@@ -145,7 +177,7 @@ Skills demonstrated: Power BI, DAX, data modeling, dashboard development, data s
 
 ### 🛠️ Technology Stack and Tools
 
-The following tools and technologies are relevant to the implementation of this project.
+The following tools and technologies are relevant for the implementation of this project.
 
 - Category	Tools / Technologies	Application
 - Data processing and automation
@@ -188,7 +220,7 @@ The analytical layer is designed to answer practical business questions rather t
 
 ### 👨‍💻 About Me
 
-I am a **Data Analyst** passionate about transforming raw data into meaningful insights that help organizations understand performance, identify opportunities, and make informed business decisions.
+I am **Tolwani**, a **Data Analyst** passionate about transforming raw data into meaningful insights that help organizations understand performance, identify opportunities, and make informed business decisions.
 
 My interests extend beyond data visualization and reporting to the processes that make reliable analytics possible, including data cleaning, SQL querying, database management, data modeling, and data warehouse development.
 
