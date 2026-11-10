@@ -7,12 +7,8 @@ Building Reliable Data Pipelines, Structured Data Models, and Business-Ready Ins
 4. Project Workflow and Implementation
 5. Technology Stack and Tools
 6. Business Questions and Analytical Focus
-7. Expected Deliverables
-8. Key Skills Demonstrated
-9. Repository Structure
-10. Future Enhancements
-11. About Me
-12. Let's Connect
+7. About Me
+8. Let's Connect
 
     
 ### 📌 Project Overview
@@ -47,58 +43,45 @@ The specific objectives include:
 
 ### 🏗️ Project Architecture
 
-The project follows a structured data pipeline architecture designed to move data from its original sources into a centralized analytical environment.
+The project follows a structured data pipeline architecture designed to move data from its original sources into a centralized analytical environment.                 
 
-Data Pipeline Workflow
-text
-                 
-
-### Architecture Explanation
+#### Architecture Explanation
 
 The architecture follows a Medallion Architecture approach, separating data into three processing layers:
 
-#### Layer	Description.
-1. Bronze	Stores raw data in its original form, preserving source information.
-2. Silver	Contains cleaned, standardized, validated, and transformed data.
-3. Gold	Contains business-ready datasets, fact tables, dimension tables, and analytical models.
+#### Layer	Description
+1. Bronze Layer:	Stores raw data in its original form, preserving source information.
+2. Silver Layer:	Contains cleaned, standardized, validated, and transformed data.
+3. Gold	Layer: Contains business-ready datasets, fact tables, dimension tables, and analytical models.
 
 This layered approach improves data organization, traceability, consistency, and analytical reliability.
 
-🔄 Project Workflow and Implementation
+### 🔄 Project Workflow and Implementation
 1. Data Extraction and Source Integration
 
 The first stage involves collecting data from different sources and preparing it for centralized processing.
 
 Key activities:
 
-Extracting structured datasets from CSV files.
+1. Extracting structured datasets from CSV files.
 
-Reviewing source schemas, column names, data types, and relationships.
+- Reviewing source schemas, column names, data types, and relationships.
 
-Identifying data dependencies and potential integration challenges.
+- Identifying data dependencies and potential integration challenges.
 
-Documenting source information and extraction requirements.
+- Documenting source information and extraction requirements.
 
 Skills demonstrated: Data acquisition, source integration, SQL, file handling, and data profiling.
 
 2. Data Cleaning and Preparation
 
-Raw datasets often contain inconsistencies that can affect analytical accuracy.
-
-I apply data preparation techniques to improve data quality before loading information into the warehouse.
+- Raw datasets often contain inconsistencies that can affect analytical accuracy. I apply data preparation techniques to improve data quality before loading information into the warehouse.
 
 Key activities:
 
-Identifying and handling missing values.
-Removing duplicate records where appropriate.
-Standardizing date formats and categorical variables.
-Correcting inconsistent naming conventions.
-Validating numerical fields and data types.
-Identifying invalid records and outliers.
-Resolving inconsistencies across multiple datasets.
-Documenting data cleaning rules and assumptions.
+Identifying and handling missing values, removing duplicate records where appropriate, standardizing date formats and categorical variables, correcting inconsistent naming conventions, validating numerical fields and data types, identifying invalid records and outliers, resolving inconsistencies across multiple datasets, documenting data cleaning rules and assumptions.
 
-Skills demonstrated: Data wrangling, data profiling, data validation, Python Pandas, SQL, and data quality management.
+Skills demonstrated: Data wrangling, data profiling, data validation, SQL, and data quality management.
 
 3. Data Transformation and ETL/ELT Development
 
@@ -108,14 +91,8 @@ Depending on the source and destination systems, transformation logic is applied
 
 Key activities:
 
-Selecting relevant fields and records.
-Standardizing data structures.
-Applying business rules and transformation logic.
-Combining datasets using joins and key relationships.
-Creating calculated columns and derived metrics.
-Aggregating transactional data into meaningful summaries.
-Preparing datasets for dimensional modeling.
-Maintaining consistency across transformation stages.
+Selecting relevant fields and records, standardizing data structures, applying business rules and transformation logic, combining datasets using joins and key relationships.
+Creating calculated columns and derived metrics, aggregating transactional data into meaningful summaries, preparing datasets for dimensional modeling, maintaining consistency across transformation stages.
 
 Skills demonstrated: ETL/ELT processes, SQL transformations, Python scripting, data integration, and analytical data preparation.
 
@@ -127,57 +104,15 @@ The implementation considers the separation of raw data, transformed datasets, a
 
 Key activities:
 
-Designing a logical and physical warehouse structure.
-Creating staging tables for incoming datasets.
-Defining schemas and database relationships.
-Establishing primary and foreign keys.
-Applying appropriate data types and constraints.
-Organizing data to support efficient analytical queries.
-Considering data integrity, scalability, and maintainability.
+Designing a logical and physical warehouse structure, creating staging tables for incoming datasets, defining schemas and database relationships, establishing primary and foreign keys, applying appropriate data types and constraints, organizing data to support efficient analytical queries, considering data integrity, scalability, and maintainability.
 
 Skills demonstrated: Data warehouse architecture, relational database design, schema design, SQL, and database management.
 
-5. Dimensional Data Modeling
+5. Data Modeling
 
 To make analytical reporting more efficient, the project incorporates dimensional modeling principles.
 
 The warehouse uses fact and dimension tables to organize business information around measurable activities and descriptive attributes.
-
-Fact Tables
-
-Fact tables contain measurable business events and numerical metrics.
-
-Examples include:
-
-Sales transactions.
-Order quantities.
-Revenue and profit.
-Customer transactions.
-Operational performance measures.
-Dimension Tables
-
-Dimension tables provide descriptive context for analyzing facts.
-
-Examples include:
-
-Customer Dimension.
-Product Dimension.
-Date Dimension.
-Location Dimension.
-Employee Dimension.
-Data Modeling Concepts
-
-The project explores:
-
-Star schema design.
-Fact and dimension table relationships.
-Primary and foreign key management.
-Surrogate key concepts.
-Grain definition.
-Measures and descriptive attributes.
-Referential integrity.
-
-Skills demonstrated: Dimensional modeling, star schema design, relational modeling, database normalization concepts, and analytical schema development.
 
 6. Data Quality Assurance and Validation
 
@@ -185,17 +120,7 @@ Data quality is essential for producing reliable reports and business insights.
 
 I incorporate validation procedures to identify potential issues throughout the data pipeline.
 
-Quality checks include:
-
-Duplicate record detection.
-Null value checks.
-Data type validation.
-Primary key uniqueness checks.
-Foreign key integrity checks.
-Referential integrity validation.
-Record count reconciliation between pipeline stages.
-Range and business rule validation.
-Source-to-target data comparison.
+Quality checks include: Duplicate record detection, Null value checks, Data type validation, Primary key uniqueness checks, Foreign key integrity checks, Referential integrity validation, Record count reconciliation between pipeline stages, Range and business rule validation, source-to-target data comparison.
 
 These checks help establish confidence in the data before it is used for reporting and decision-making.
 
@@ -205,18 +130,8 @@ Skills demonstrated: Data quality assurance, data auditing, reconciliation, vali
 
 Once the data warehouse is populated and validated, SQL is used to investigate business performance and extract relevant information.
 
-Analytical techniques include:
-
-Data aggregation using GROUP BY.
-Multi-table joins.
-Common Table Expressions (CTEs).
-Subqueries and nested queries.
-Window functions.
-Conditional logic using CASE WHEN.
-Ranking and segmentation.
-Time-based analysis.
-KPI calculations.
-Trend and comparative analysis.
+Analytical techniques include: Data aggregation using GROUP BY, Multi-table joins, Common Table Expressions (CTEs), Subqueries and nested queries, window functions.
+Conditional logic using CASE WHEN, Ranking and segmentation, Time-based analysis, KPI calculations, Trend and comparative analysis.
 
 The objective is to move beyond simply retrieving records and use SQL to answer meaningful business questions.
 
@@ -226,50 +141,81 @@ Skills demonstrated: Advanced SQL, analytical querying, business metrics, trend 
 
 Power BI serves as the business intelligence layer, translating structured warehouse data into interactive reports and dashboards.
 
-Key activities:
-
-Connecting Power BI to the data warehouse.
-Establishing relationships between tables.
-Developing analytical data models.
-Creating calculated measures using DAX.
-Designing interactive dashboards.
-Implementing slicers, filters, and drill-through functionality.
-Developing KPI cards and trend visualizations.
-Presenting findings through clear and accessible reporting.
-Potential Dashboard Components
-Executive performance overview.
-Revenue and profitability analysis.
-Customer and product performance.
-Operational performance trends.
-Time-based comparisons.
-Category and geographical breakdowns.
-
 Skills demonstrated: Power BI, DAX, data modeling, dashboard development, data storytelling, and business intelligence reporting.
 
-🛠️ Technology Stack and Tools
+### 🛠️ Technology Stack and Tools
 
 The following tools and technologies are relevant to the implementation of this project.
 
-Category	Tools / Technologies	Application
-Programming	Python	Data processing and automation
-Data Analysis	cleaning and transformation
-Database	SQL Server  and querying
-Data Warehousing	SQL-based warehouse	Structured analytical storage
-Data Modeling	Star Schema
-ETL/ELT	SQL, 	Data pipeline development
-Business Intelligence	Power BI	Interactive reporting
-Calculations	DAX	Measures and KPIs
-Data Visualization
-Version Control	Git, GitHub	Version management and documentation
-Note: The tools listed should reflect the technologies actually implemented in the final project. Additional tools can be incorporated as the project develops.
-📊 Business Questions and Analytical Focus
+- Category	Tools / Technologies	Application
+- Data processing and automation
+- Data Analysis	Cleaning and transformation
+- Database	SQL Server  and querying
+- Data Warehousing	SQL-based warehouse	Structured analytical storage
+- Data Modeling	Star Schema - Using draw.io
+- ETL/ELT	SQL, 	Data pipeline development
+- Business Intelligence	Power BI	Interactive reporting and Data Visualization
+- Calculations	DAX	Measures and KPIs
+- Notion
+- Version Control	Git, GitHub	Version management and documentation
 
-The analytical layer is designed to answer practical business questions rather than simply produce charts.
 
-Depending on the dataset selected, the project can investigate the following areas.
+
+### 📊 Business Questions and Analytical Focus
+The analytical layer is designed to answer practical business questions rather than produce charts.
 
 1. Revenue and Financial Performance
-What is the overall revenue and profit generated?
-Which products or categories contribute most to revenue?
-How does performance change over time?
-Which areas are experiencing declining profitability
+- What is the overall revenue and profit generated?
+- Which products or categories contribute most to revenue?
+- How does performance change over time?
+- Which areas are experiencing declining profitability?
+2. Customer Analysis
+- Who are the highest-value customers?
+- Which customer segments generate the most revenue?
+- How does customer purchasing behavior change over time?
+- Which customers demonstrate repeat purchasing patterns?
+3. Product Performance
+- Which products generate the highest sales?
+- Which products contribute most to profitability?
+- Are there underperforming product categories?
+- How does product performance vary across locations?
+4. Operational Analysis
+- How efficiently are orders being processed?
+- Are there noticeable changes in operational performance?
+- Which areas require operational improvement?
+- Are there patterns in order volumes over time?
+
+
+### 👨‍💻 About Me
+
+I am a **Data Analyst** passionate about transforming raw data into meaningful insights that help organizations understand performance, identify opportunities, and make informed business decisions.
+
+My interests extend beyond data visualization and reporting to the processes that make reliable analytics possible, including data cleaning, SQL querying, database management, data modeling, and data warehouse development.
+
+I work with **SQL, Python, Power BI, and Excel** to explore datasets, solve analytical problems, develop reporting solutions, and communicate insights effectively.
+
+I enjoy working through the entire data lifecycle, from understanding business requirements and preparing raw datasets to building structured analytical models and presenting findings through interactive dashboards.
+
+I am continuously developing my technical and analytical skills, with a particular interest in:
+
+- Data Analytics
+- Business Intelligence
+- Data Warehousing
+- Analytics Engineering
+- Data Engineering
+- Database Management
+- Data Visualization
+
+My goal is to build data solutions that are not only technically sound but also useful, reliable, and capable of answering real business questions.
+
+---
+
+### 📬 Let's Connect
+
+I welcome opportunities to collaborate, learn, and contribute to projects involving data analytics, business intelligence, and data-driven solutions.
+
+**Thank you for taking the time to explore my work!**
+
+
+
+
