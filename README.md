@@ -13,7 +13,7 @@ Building Reliable Data Pipelines, Structured Data Models, and Business-Ready Ins
     
 ### 📌 Project Overview
 
-This project demonstrates the design and development of an end-to-end data warehouse solution, covering the complete process of transforming raw data from multiple sources into structured, reliable, and analysis-ready information.
+This project demonstrates the design and development of an end-to-end data warehouse solution, covering the complete process of transforming raw sales data from multiple sources into structured, reliable, and analysis-ready information.
 
 The objective is to build a scalable analytical data solution that reflects how organizations collect, process, store, and analyze data to support business operations and strategic decision-making.
 
@@ -31,7 +31,7 @@ The primary objective is to develop a structured data warehouse that supports ef
 
 The specific objectives include:
 
-1. Data Integration: Extract and consolidate data from multiple sources (ERP & CRM) CSV Files into a centralized analytical environment.
+1. Data Integration: Extract and consolidate data from multiple CSV files into a centralized analytical environment.
 2. ETL/ELT Development: Build structured workflows for extracting, cleaning, transforming, and loading datasets.
 3. Data Quality Management: Identify and address missing values, duplicates, inconsistencies, invalid records, and formatting issues.
 4. Data Warehouse Design: Develop a structured warehouse architecture that separates raw, transformed, and business-ready data.
