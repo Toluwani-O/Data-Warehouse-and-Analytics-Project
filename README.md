@@ -41,7 +41,7 @@ The specific objectives include:
 8. Business Intelligence: Develop analytical queries and Power BI dashboards to monitor performance and identify trends.
 9. Insight Generation: Translate analytical findings into actionable recommendations that support business decisions.
 
-### 🏗️ Project Architecture
+### 🏗️ [Project Architecture](https://drive.google.com/file/d/1DEA9b-f_BBA1jcuXE2oXcO00jAHs7t4y/view?usp=sharing) 
 
 The project follows a structured data pipeline architecture designed to move data from its original sources into a centralized analytical environment.                 
 
