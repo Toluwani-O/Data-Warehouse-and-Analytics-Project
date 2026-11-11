@@ -24,12 +24,12 @@
    Creates the main database that will store all data
    warehouse objects, including tables, views, and
    analytical datasets.
+-- First step is to switch to a master database (A database where you can create other databases)
    ========================================================= */
 
 USE master;
 
 CREATE DATABASE DataWarehouse;
-
 
 /* =========================================================
    STEP 2: SELECT DATA WAREHOUSE DATABASE
